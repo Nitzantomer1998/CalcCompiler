@@ -17,5 +17,5 @@
 "else" {return ELSE_KEYWORD;}
 "let" {return LET_KEYWORD;}
 "in" {return IN_KEYWORD;}
-
+[a-zA-Z][a-zA-Z0-9]* {yylval.symbol = symbolLookup(yytext); return IDENTIFIER;}
 %%
