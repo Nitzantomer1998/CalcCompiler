@@ -16,4 +16,6 @@
 "then" {return THEN_KEYWORD;}
 "else" {return ELSE_KEYWORD;}
 "let" {return LET_KEYWORD;}
+"in" {return IN_KEYWORD;}
+
 %%
