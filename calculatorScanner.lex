@@ -11,4 +11,5 @@
 "/" { return DIVIDE; }
 "**" { return POWER; }
 "%" { return MODULO; }
+"zero?" { return IF_ZERO; }
 %%
