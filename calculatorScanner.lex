@@ -3,5 +3,6 @@
 #include <string.h>
 #include "calculator.h"%}
 %%
-[ \t\r\n]+ ;    
+[ \t\r\n]+ ;
+"exit" {exit(1);}
 %%
