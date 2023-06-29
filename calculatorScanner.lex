@@ -18,5 +18,7 @@
 "let" {return LET_KEYWORD;}
 "in" {return IN_KEYWORD;}
 [a-zA-Z][a-zA-Z0-9]* {yylval.symbol = symbolLookup(yytext); return IDENTIFIER;}
-[+-]?[0-9]+([.][0-9]+)?([eE][+-]?[0-9]+)? {yylval.number = atof(yytext); return EXPRESSION;}         
+[+-]?[0-9]+([.][0-9]+)?([eE][+-]?[0-9]+)? {yylval.number = atof(yytext); return EXPRESSION;}
+[(),=;] {return yytext[0];}
+
 %%
