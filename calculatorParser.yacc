@@ -27,3 +27,8 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %token <symbol> IDENTIFIER
 %token <number> EXPRESSION
 %type <number> expression
+%left ADD
+%left MINUS
+%left MULTIPLY
+%left DIVIDE
+%left MODULO
