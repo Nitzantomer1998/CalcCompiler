@@ -42,3 +42,4 @@ expression: EXPRESSION { $$ = $1; }|ADD '(' expression ',' expression ')' { $$ =
 int main() {errorFlag = 0; return yyparse();}
 int yyerror(const char* message) {fprintf(stderr, "Error: %s\n", message);return 0;}
 void printHandler(double expressionValue) {if (errorFlag == 0) printf("Expression = [%f]\n\n", expressionValue); else {printf("\n"); errorFlag = 0;} }
+double calcualteDivision(double dividend, double divisor) { double result = 0; if (divisor == 0) {printf("Error: Division By Zero\n");errorFlag = 1;} else result = dividend / divisor;return result;}
