@@ -33,3 +33,4 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %left DIVIDE
 %left MODULO
 %right POWER
+%start statement_list
