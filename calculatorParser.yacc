@@ -12,3 +12,9 @@ int errorFlag = 0;
 int symbolIndex = 0;
 struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %union {double number; struct SymbolTab* symbol;}
+%token ADD
+%token MINUS
+%token MULTIPLY
+%token DIVIDE
+%token POWER
+%token MODULO
