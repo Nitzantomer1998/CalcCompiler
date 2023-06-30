@@ -19,3 +19,6 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %token POWER
 %token MODULO
 %token IF_ZERO
+%token IF_KEYWORD
+%token THEN_KEYWORD
+%token ELSE_KEYWORD
