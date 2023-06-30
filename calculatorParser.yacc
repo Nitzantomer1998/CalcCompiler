@@ -26,3 +26,4 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %token IN_KEYWORD
 %token <symbol> IDENTIFIER
 %token <number> EXPRESSION
+%type <number> expression
