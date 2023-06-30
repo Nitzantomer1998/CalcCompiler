@@ -23,3 +23,4 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %token THEN_KEYWORD
 %token ELSE_KEYWORD
 %token LET_KEYWORD
+%token IN_KEYWORD
