@@ -37,3 +37,4 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %%
 statement_list: statement '\n'|statement_list statement '\n';
 statement: IDENTIFIER '=' expression { $1->value = $3; }|expressions{printf("\n");};
+expressions: expression ';' {printHandler($1);}|expressions expression ';' {printHandler($2);};     
