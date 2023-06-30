@@ -105,3 +105,18 @@ double calculateModulo(double dividend, double divisor) {
 
     return result;
 }
+struct SymbolTab* symbolLookup(const char* symbol) {
+    for (int i = 0; i < symbolIndex; ++i) {
+        if (strcmp(symbolTable[i].name, symbol) == 0) {
+            return &symbolTable[i];
+        }
+    }
+
+    if (symbolIndex >= MAX_SYMBOL_LENGTH) {
+        fprintf(stderr, "Error: Too many symbols\n");
+        exit(1);
+    }
+
+    strcpy(symbolTable[symbolIndex].name, symbol);
+    return &symbolTable[symbolIndex++];
+}
