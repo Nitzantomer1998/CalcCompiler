@@ -18,3 +18,4 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %token DIVIDE
 %token POWER
 %token MODULO
+%token IF_ZERO
