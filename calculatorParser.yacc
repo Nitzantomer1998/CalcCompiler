@@ -43,3 +43,51 @@ int main() {errorFlag = 0; return yyparse();}
 int yyerror(const char* message) {fprintf(stderr, "Error: %s\n", message);return 0;}
 void printHandler(double expressionValue) {if (errorFlag == 0) printf("Expression = [%f]\n\n", expressionValue); else {printf("\n"); errorFlag = 0;} }
 double calcualteDivision(double dividend, double divisor) { double result = 0; if (divisor == 0) {printf("Error: Division By Zero\n");errorFlag = 1;} else result = dividend / divisor;return result;}
+
+double calculatePower(double number, double exponent) {
+    double result = 0;
+    
+    if (number == 0 && exponent == 0) 
+    { 
+     printf("Error: Unsupported Mathematical Calculation\n"); 
+     errorFlag = 1; 
+    }
+    
+    else if (number < 0 && exponent != (int)exponent)  
+    { 
+     printf("Error: Unsupported Operand Types\n"); 
+     errorFlag = 1; 
+    }
+    
+    else
+    {
+     int isNegative = exponent < 0.0;
+     double positiveExponent = isNegative ? -exponent : exponent;
+
+     double integerPart = (int)positiveExponent;
+     double fractionalPart = positiveExponent - integerPart;
+
+     result = 1.0;
+     while (integerPart > 0.0) {
+         result *= number;
+         integerPart--;
+     }
+
+     if (fractionalPart > 0.0) {
+         double term = 1.0;
+         double power = number;
+         int i = 1;
+
+         while (term > 1e-16) {
+             term *= fractionalPart / i;
+             result += term * power;
+             power *= number;
+             i++;
+         }
+     }
+     
+     result = isNegative ? 1.0 / result : result;
+    }
+        
+    return result;
+}
