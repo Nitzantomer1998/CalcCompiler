@@ -24,3 +24,5 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %token ELSE_KEYWORD
 %token LET_KEYWORD
 %token IN_KEYWORD
+%token <symbol> IDENTIFIER
+%token <number> EXPRESSION
