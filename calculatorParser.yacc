@@ -11,3 +11,4 @@ double calculateModulo(double dividend, double divisor);
 int errorFlag = 0;
 int symbolIndex = 0;
 struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
+%union {double number; struct SymbolTab* symbol;}
