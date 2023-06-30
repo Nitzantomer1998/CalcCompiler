@@ -34,3 +34,5 @@ struct SymbolTab symbolTable[MAX_SYMBOL_LENGTH];%}
 %left MODULO
 %right POWER
 %start statement_list
+%%
+statement_list: statement '\n'|statement_list statement '\n';
