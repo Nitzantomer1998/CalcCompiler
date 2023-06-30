@@ -91,3 +91,17 @@ double calculatePower(double number, double exponent) {
         
     return result;
 }
+double calculateModulo(double dividend, double divisor) {
+    double result = 0;
+    
+    if (divisor == 0) 
+    {
+     printf("Error: Division By Zero\n");
+     errorFlag = 1;
+    }
+    
+    else
+        result = dividend - ((int)(dividend / divisor) * divisor);
+
+    return result;
+}
